@@ -16,6 +16,12 @@ server.on("request", (req, res) => {
   if (req.url === "/characters") {
     res.write(JSON.stringify(characters, null, 4));
     res.end();
+  } else if (req.url.length === 2) { "/a /b /c"
+    const letterChosen = req.url[1].toLowerCase();
+    const allCharactersBeginningWith = characters.filter(char => {
+        return char[0].toLowerCase() === letterChosen;
+    });
+    res.write(JSON.stringify(allCharactersBeginningWith, null, 4));
   } else {
     res.write(`
      Hello. 
