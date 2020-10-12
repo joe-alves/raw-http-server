@@ -32,7 +32,7 @@ server.on("request", (req, res) => {
       res
     );
   } else if (req.url === "/hello") {
-    fs.appendFile("./greetings.txt", "hello");
+    fs.appendFile("./greetings.txt", "hello", () => {});
     res.write("Your hello has been recorded!");
     res.end();
   } else {
