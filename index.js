@@ -22,6 +22,7 @@ server.on("request", (req, res) => {
         return char[0].toLowerCase() === letterChosen;
     });
     res.write(JSON.stringify(allCharactersBeginningWith, null, 4));
+    res.end();
   } else {
     res.write(`
      Hello. 
