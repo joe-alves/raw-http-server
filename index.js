@@ -32,8 +32,8 @@ server.on("request", (req, res) => {
      Thanks for contacting me! :) 
      You look good today!
     `);
+    res.end();
   }
-  res.end();
 });
 
 server.listen(80, () => {
