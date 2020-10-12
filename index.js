@@ -10,11 +10,11 @@ myButton.addEventListener("click", () => {});
 */
 
 server.on("request", (req, res) => { // On HTTP request.
-    console.log(req.socket.localAddress.slice(0, 7));
     res.write(`
      Hello. 
      Thanks for contacting me! :) 
      You look good today!
+     ${req.socket.localAddress}
     `);
     res.end();
 });
