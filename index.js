@@ -10,4 +10,6 @@ server.on("request", (req, res) => {
     res.end();
 });
 
-server.listen(80);
+server.listen(80, () => {
+    console.log("~ Server listening on port 80 ~");
+});
